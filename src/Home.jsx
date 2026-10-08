@@ -3,12 +3,13 @@ import myGradImg from './assets/MyGradImg.jpg'
 import RotatingText from './RotatingText'
 
 const Home = ({
-    name = "Adedotun Anthony",
+    name = "Adedeji Adedotun Anthony",
     title = "Software Engineer · AI Training & Code Evaluation",
-    description = "I help AI labs train and evaluate language models on real software engineering: designing hard coding challenges in open-source codebases, writing reference solutions and test suites, and judging model-generated code. I also build responsive web applications with React and modern tooling.",
+    description = "Software engineer with 4+ years of experience who works with AI labs to train and evaluate large language models on real software engineering. I write and review coding tasks, reference solutions and test suites, judge model-generated code for correctness and quality, and design hard, fair problems inside real open-source codebases.",
     imageUrl = myGradImg,
     yearsExperience = "4+ Years",
-    projectsCompleted = "Multiple Projects",
+    projectsCompleted = "Rust · Go · C++",
+    projectsLabel = "Core languages",
     darkMode = true,
     onContactClick,
     onDownloadCvClick
@@ -28,9 +29,9 @@ const Home = ({
                     <div>
                         {/* Rotating text */}
                         <div className="flex items-center mb-10">
-                            <h1 className="text-4xl font-bold me-3">Creative</h1>
+                            <h1 className="text-4xl font-bold me-3">Building</h1>
                             <RotatingText
-                                texts={['Thinking', 'Coding', 'Innovations', 'Designs']}
+                                texts={['Benchmarks', 'Test Suites', 'Evaluations', 'Software']}
                                 mainClassName="font-bold text-3xl px-2 sm:px-2 md:px-3 bg-indigo-400 hover:bg-indigo-500 text-white overflow-hidden py-3 sm:py-3 md:py-3 justify-center rounded-lg"
                                 staggerFrom={"last"}
                                 initial={{ y: "100%" }}
@@ -125,7 +126,7 @@ const Home = ({
                                     <i className={`fas fa-medal ${darkMode ? 'text-indigo-400' : 'text-indigo-600'} text-xl`}></i>
                                 </div>
                                 <div>
-                                    <p className={`font-bold text-gray-100`}>{yearsExperience}</p>
+                                    <p className={`font-bold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>{yearsExperience}</p>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Experience</p>
                                 </div>
                             </div>
@@ -144,8 +145,8 @@ const Home = ({
                                     <i className={`fas fa-project-diagram ${darkMode ? 'text-indigo-400' : 'text-indigo-600'} text-xl`}></i>
                                 </div>
                                 <div>
-                                    <p className={`font-bold text-gray-100`}>{projectsCompleted}</p>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">Completed</p>
+                                    <p className={`font-bold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>{projectsCompleted}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{projectsLabel}</p>
                                 </div>
                             </div>
                         </motion.div>

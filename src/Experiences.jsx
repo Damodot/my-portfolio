@@ -26,7 +26,7 @@ const Experience = ({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
             >
-                My professional journey and the companies I've worked with.
+                Training and evaluating AI models on real software engineering.
             </motion.p>
 
             <div className="relative max-w-4xl mx-auto">
@@ -52,7 +52,12 @@ const Experience = ({
                                 </span>
                             </div>
                             <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>{exp.company}</h4>
-                            <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
+                            {exp.description && <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>}
+                            {exp.points && (
+                                <ul className="list-disc pl-5 space-y-2 text-left text-gray-600 dark:text-gray-300">
+                                    {exp.points.map((point) => <li key={point}>{point}</li>)}
+                                </ul>
+                            )}
                         </div>
                     </motion.div>
                 ))}

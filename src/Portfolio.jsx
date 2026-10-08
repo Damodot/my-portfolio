@@ -62,29 +62,6 @@ const Portfolio = () => {
         });
     };
 
-    // Handlers for Projects
-    const handleViewProject = (projectId) => {
-        projectId === 1
-            ? window.location.href = 'https://hitvverse.web.app'
-            : projectId === 2
-                ? window.location.href = 'https://tourounder.web.app'
-                : projectId === 3
-                    ? window.location.href = 'https://adevotun.web.app'
-                    : console.log('Invalid project ID');
-        console.log(`Viewing project ${projectId}`);
-    };
-
-    const handleViewGithub = (projectId) => {
-        projectId === 1
-            ? window.location.href = 'https://github.com/Damodot/original-hitverse.git'
-            : projectId === 2
-                ? window.location.href = 'https://github.com/Damodot/Tourander-Json.git'
-                : projectId === 3
-                    ? window.location.href = 'https://adevotun.web.app'
-                    : console.log('Invalid project ID');
-        console.log(`Viewing GitHub for project ${projectId}`);
-    };
-
     // Handlers for Home
     const handleContactClick = () => {
         setActiveTab('contact');
@@ -100,80 +77,85 @@ const Portfolio = () => {
         console.log('Form submitted');
     };
 
-    const projectsData = [
-        {
-            id: 1,
-            title: "Music Platform",
-            description: "A well functioning music application, with lyrics section, liked songs section and is fully responsive on all websites.",
-            tags: ["Javascript", "Bootstrap", "Firebase"],
-            image: MusicImage
-        },
-        {
-            id: 2,
-            title: "Travelling Agency",
-            description: "Mobile application for tracking fitness activities, nutrition, and health metrics.",
-            tags: ["Javascript", "Firebase", "Bootstrap"],
-            image: TravelPicture
-        },
-        {
-            id: 3,
-            title: "Portfolio Website",
-            description: "My responsive portfolio website with animations and contact form.",
-            tags: ["React", "Tailwind CSS", "Framer Motion"],
-            image: PortfolioImage
-        }
+    const repo = (path) => `https://github.com/${path}`;
+    const openSourceData = [
+        { group: "languages", title: "Rune", url: repo("rune-rs/rune"),
+          description: "Embeddable dynamic programming language for Rust, with its own compiler, virtual machine and package workspaces.",
+          tags: ["Rust", "Compiler", "VM"] },
+        { group: "languages", title: "Otterlang", url: repo("ottrlang/otterlang"),
+          description: "Statically typed language with a Python-like syntax that compiles to native code.",
+          tags: ["Rust", "Compiler", "Type checker"] },
+        { group: "languages", title: "Dyon", url: repo("PistonDevelopers/dyon"),
+          description: "Dynamically typed scripting language from the Piston game-engine project, with an optional type checker.",
+          tags: ["Rust", "Interpreter", "Types"] },
+        { group: "languages", title: "Coi", url: repo("coi/coi"),
+          description: "Component-based language and compiler that turns UI components into C++ and WebAssembly.",
+          tags: ["C++", "WebAssembly", "Compiler"] },
+        { group: "languages", title: "Bunster", url: repo("yassinebenaid/bunster"),
+          description: "Compiler that turns Bash scripts into standalone Go programs.",
+          tags: ["Go", "Bash", "Compiler"] },
+        { group: "queries", title: "Polyglot", url: repo("tobilg/polyglot"),
+          description: "SQL transpiler and validator that parses, analyses and rewrites queries across dozens of SQL dialects.",
+          tags: ["Rust", "SQL", "Parser"] },
+        { group: "queries", title: "Grafeo", url: repo("GrafeoDB/grafeo"),
+          description: "Graph database engine with Cypher, GQL and SPARQL front ends, a query planner and an optimizer.",
+          tags: ["Rust", "Graph database", "Cypher"] },
+        { group: "queries", title: "mq", url: repo("harehare/mq"),
+          description: "jq-like query language and interpreter for Markdown documents.",
+          tags: ["Rust", "Query language", "Interpreter"] },
+        { group: "queries", title: "jsongrep", url: repo("micahkepe/jsongrep"),
+          description: "Query engine for searching and extracting data from JSON documents.",
+          tags: ["Rust", "JSON", "Query engine"] },
     ];
 
-    const skillsData = [
-        { name: "AI Code Evaluation", level: 90, icon: "fas fa-robot" },
-        { name: "Rust", level: 80, icon: "fab fa-rust" },
-        { name: "Go", level: 75, icon: "fab fa-golang" },
-        { name: "C++", level: 70, icon: "fas fa-code" },
-        { name: "React", level: 90, icon: "fab fa-react" },
-        { name: "JavaScript", level: 85, icon: "fab fa-js" },
-        { name: "Node.js", level: 80, icon: "fab fa-node-js" },
-        { name: "HTML/CSS", level: 95, icon: "fab fa-html5" },
-        { name: "UI/UX Design", level: 75, icon: "fas fa-paint-brush" },
-        { name: "Python", level: 70, icon: "fab fa-python" }
+    const webProjectsData = [
+        { title: "Music Platform", image: MusicImage, url: "https://hitvverse.web.app",
+          github: "https://github.com/Damodot/original-hitverse.git",
+          description: "Fully responsive music application with a lyrics section and liked songs.",
+          tags: ["JavaScript", "Bootstrap", "Firebase"] },
+        { title: "Travel Agency", image: TravelPicture, url: "https://tourounder.web.app",
+          github: "https://github.com/Damodot/Tourander-Json.git",
+          description: "Travel agency website for browsing destinations and tour packages.",
+          tags: ["JavaScript", "Firebase", "Bootstrap"] },
+        { title: "Portfolio Website", image: PortfolioImage, url: "https://adevotun.web.app",
+          github: "https://github.com/Damodot/my-portfolio",
+          description: "This portfolio: a responsive React site with animations and a contact form.",
+          tags: ["React", "Tailwind CSS", "Framer Motion"] },
     ];
 
     const experienceData = [
         {
-            role: "Challenge Author, Olympus Program",
+            role: "Challenge Author, Olympus Program (AI coding evaluation)",
             company: "Shipd",
             period: "Oct 2025 - Present",
-            description: "Design advanced software engineering challenges inside real open-source repositories for evaluating AI coding agents: reference solutions in Rust, C++ and Go, hidden test suites, Docker test environments and precise problem statements, with difficulty calibrated against blind agent runs."
+            points: [
+                "Design advanced software engineering challenges inside real open-source repositories, used by AI labs to measure and improve autonomous coding agents.",
+                "Implement each feature or fix end to end as a reference solution, often across parsers, planners, runtimes and public APIs in Rust, C++ and Go.",
+                "Write hidden test suites that fail on the original code and pass only with a correct implementation, and package everything in reproducible Docker environments with JUnit reporting.",
+                "Write concise, unambiguous problem statements so that every tested behaviour is specified and nothing untested is required.",
+                "Calibrate difficulty against blind runs of AI agents, analyse why agents fail, and iterate on platform quality reviews covering fairness, test quality and solution quality.",
+            ],
         },
         {
             role: "AI Training Contributor, Software Engineering",
             company: "AfterQuery",
             period: "Oct 2024 - Sep 2025",
-            description: "Created expert coding tasks with reference solutions and verification tests for frontier AI labs, evaluated model-generated code for correctness, efficiency and security, and wrote grading rubrics."
+            points: [
+                "Created expert software engineering data for frontier AI labs: realistic coding tasks with clear requirements, reference solutions and verification tests.",
+                "Evaluated model-generated code and explanations for correctness, efficiency, security and readability, and wrote detailed critiques and improved answers.",
+                "Built grading rubrics and edge-case checks so model outputs can be scored consistently.",
+            ],
         },
         {
             role: "AI Training Contributor, Coding",
             company: "Outlier",
             period: "Oct 2023 - Sep 2024",
-            description: "Wrote coding prompts and ideal responses for fine-tuning language models, ranked competing model responses (RLHF), and ran model-generated code to catch errors and hallucinated APIs."
+            points: [
+                "Wrote coding prompts and ideal responses used to fine-tune large language models.",
+                "Ranked and rated competing model responses (RLHF), justifying preferences on correctness, completeness and clarity.",
+                "Ran and debugged model-generated code to verify claims, flagging errors, hallucinated APIs and unsafe patterns.",
+            ],
         },
-        {
-            role: "Javascript Instructor",
-            company: "SQI College of ICT",
-            period: "2025 - Present",
-            description: "Teach JavaScript and modern web development at a leading tech school with campuses across Nigeria."
-        },
-        {
-            role: "Web Developer",
-            company: "Hitverse Music Platform",
-            period: "2024 - 2025",
-            description: "Developed and maintained client websites with focus on performance and accessibility."
-        },
-        {
-            role: "Frontend Website Developer",
-            company: "Changee Fin Tech.",
-            period: "2025 - Present",
-            description: "Built the frontend for the settings page and integrated the backend endpoints and APIs it needs."
-        }
     ];
 
     return (
@@ -287,18 +269,14 @@ const Portfolio = () => {
 
                     {activeTab === 'projects' && (
                         <Projects
-                            projects={projectsData}
+                            openSource={openSourceData}
+                            webProjects={webProjectsData}
                             darkMode={darkMode}
-                            onViewProject={handleViewProject}
-                            onViewGithub={handleViewGithub}
                         />
                     )}
 
                     {activeTab === 'skills' && (
-                        <Skills
-                            skills={skillsData}
-                            darkMode={darkMode}
-                        />
+                        <Skills darkMode={darkMode} />
                     )}
 
                     {activeTab === 'experience' && (

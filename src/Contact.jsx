@@ -6,7 +6,7 @@ const Contact = ({
     onSubmit,
     socialLinks = {
         github: "https://github.com/Damodot",
-        linkedin: "www.linkedin.com/in/adedeji-damodotun-a60648256",
+        linkedin: "https://www.linkedin.com/in/adedotun-adedeji-a60648256",
         email: "mailto:damodotunadedeji@gmail.com",
         phone: "tel:+2347019748865"
     }
