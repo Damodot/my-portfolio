@@ -4,10 +4,10 @@ import RotatingText from './RotatingText'
 
 const Home = ({
     name = "Adedotun Anthony",
-    title = "Fullstack Website Developer",
-    description = "I create beautiful, responsive, and user-friendly web applications with modern technologies. Passionate about crafting exceptional digital experiences.",
+    title = "Software Engineer · AI Training & Code Evaluation",
+    description = "I help AI labs train and evaluate language models on real software engineering: designing hard coding challenges in open-source codebases, writing reference solutions and test suites, and judging model-generated code. I also build responsive web applications with React and modern tooling.",
     imageUrl = myGradImg,
-    yearsExperience = "1 Year",
+    yearsExperience = "4+ Years",
     projectsCompleted = "Multiple Projects",
     darkMode = true,
     onContactClick,

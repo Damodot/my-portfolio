@@ -91,7 +91,7 @@ const Portfolio = () => {
     };
 
     const handleDownloadCvClick = () => {
-        console.log('Downloading CV');
+        window.open('/Adedeji_Adedotun_Anthony_Resume.pdf', '_blank', 'noopener,noreferrer');
     };
 
     // Handler for Contact form
@@ -125,6 +125,10 @@ const Portfolio = () => {
     ];
 
     const skillsData = [
+        { name: "AI Code Evaluation", level: 90, icon: "fas fa-robot" },
+        { name: "Rust", level: 80, icon: "fab fa-rust" },
+        { name: "Go", level: 75, icon: "fab fa-golang" },
+        { name: "C++", level: 70, icon: "fas fa-code" },
         { name: "React", level: 90, icon: "fab fa-react" },
         { name: "JavaScript", level: 85, icon: "fab fa-js" },
         { name: "Node.js", level: 80, icon: "fab fa-node-js" },
@@ -135,10 +139,28 @@ const Portfolio = () => {
 
     const experienceData = [
         {
+            role: "Challenge Author, Olympus Program",
+            company: "Shipd",
+            period: "Oct 2025 - Present",
+            description: "Design advanced software engineering challenges inside real open-source repositories for evaluating AI coding agents: reference solutions in Rust, C++ and Go, hidden test suites, Docker test environments and precise problem statements, with difficulty calibrated against blind agent runs."
+        },
+        {
+            role: "AI Training Contributor, Software Engineering",
+            company: "AfterQuery",
+            period: "Oct 2024 - Sep 2025",
+            description: "Created expert coding tasks with reference solutions and verification tests for frontier AI labs, evaluated model-generated code for correctness, efficiency and security, and wrote grading rubrics."
+        },
+        {
+            role: "AI Training Contributor, Coding",
+            company: "Outlier",
+            period: "Oct 2023 - Sep 2024",
+            description: "Wrote coding prompts and ideal responses for fine-tuning language models, ranked competing model responses (RLHF), and ran model-generated code to catch errors and hallucinated APIs."
+        },
+        {
             role: "Javascript Instructor",
             company: "SQI College of ICT",
             period: "2025 - Present",
-            description: "Leading tech school in so many cities in Nigeria."
+            description: "Teach JavaScript and modern web development at a leading tech school with campuses across Nigeria."
         },
         {
             role: "Web Developer",
@@ -150,7 +172,7 @@ const Portfolio = () => {
             role: "Frontend Website Developer",
             company: "Changee Fin Tech.",
             period: "2025 - Present",
-            description: "Assisted in building te frontend design for the settings page and consumed neccessary backend endpoint and APIs"
+            description: "Built the frontend for the settings page and integrated the backend endpoints and APIs it needs."
         }
     ];
 

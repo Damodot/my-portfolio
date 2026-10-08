@@ -1,26 +1,7 @@
 import { motion } from "framer-motion";
 
 const Experience = ({
-    experiences = [
-        {
-            role: "Senior Frontend Developer",
-            company: "Tech Innovations Inc.",
-            period: "2021 - Present",
-            description: "Leading the frontend team to build responsive web applications with React and Next.js."
-        },
-        {
-            role: "Web Developer",
-            company: "Digital Solutions LLC",
-            period: "2018 - 2021",
-            description: "Developed and maintained client websites with focus on performance and accessibility."
-        },
-        {
-            role: "Junior Developer",
-            company: "StartUp Ventures",
-            period: "2016 - 2018",
-            description: "Assisted in building MVP products and learned modern web development practices."
-        }
-    ],
+    experiences = [],
     darkMode = true
 }) => {
     return (
